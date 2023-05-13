@@ -59,7 +59,7 @@ This will run all experiments. Below we will cover all the individual experiment
 ## Train the model
 <hr>
 
-Before you train the model, adjust the parameters in the configuration JSON file ```config_classification_paysim.json.``` The parameters that we tweak in DSC are:
+Before you train the model, adjust the parameters in the configuration JSON file ```config_classification_paysim.json``` (and move to corresponding directory again). The parameters that we tweak in DSC are:
 <ul>
   <li>sigmoid_threshold: float between 0.0 and 1.0</li>
   <li>metric: "inv_crossentropy" or "f1_score"</li>
