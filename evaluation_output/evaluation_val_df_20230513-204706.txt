@@ -1,0 +1,9 @@
+equation: sqrt(x17 + x20)*(-x14 + x2 + x23)
+threshold: 0.7
+dataset: val_df
+
+log_loss = 0.016502335222890373
+accuracy = 0.999522209404302
+precision_score = 0.9539823008849557
+recall_score = 0.6597307221542228
+f1_score = 0.7800289435600579
