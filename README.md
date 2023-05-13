@@ -89,4 +89,4 @@ You can enter the following values:
   <li>dataset: dataset name, "train_df", "val_df", or "test_df"</li>
 </ul>  
 
-By running this code a txt file is created in ```./evaluation_output```, which contains the log loss, accuracy, precision, recall and f1 score of the given equation of the given dataset for given threshold..
+By running this code a txt file is created in ```./evaluation_output```, which contains the log loss, accuracy, precision, recall and f1 score of the given equation of the given dataset for given threshold.
