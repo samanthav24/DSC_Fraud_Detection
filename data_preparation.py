@@ -81,7 +81,7 @@ df = df.reindex(columns=[col for col in df.columns if col not in ['num_transDest
 """ Prepare the training and test sets """
 
 # delete name columns that will not be used
-df.drop(['nameOrig', 'nameDest'], axis=1, inplace=True)
+df.drop(['nameOrig', 'nameDest', 'isFlaggedFraud'], axis=1, inplace=True)
 
 # split the dataset into training and validation, and test sets
 train_df, test_df = train_test_split(df, test_size=0.25, random_state=42, shuffle=True)
