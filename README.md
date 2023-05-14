@@ -84,7 +84,7 @@ python evaluate_expression.py --equation --threshold --dataset
 
 You can enter the following values:
 <ul>
-  <li>equation: string of the equation you want to evaluate, e.q. "sqrt(x17 + x20)*(-x14 + x2 + x23)"</li>
+  <li>equation: string of the equation you want to evaluate, e.g. "sqrt(x17 + x20)*(-x14 + x2 + x23)"</li>
   <li>threshold: float between 0 and 1</li>
   <li>dataset: dataset name, "train_df", "val_df", or "test_df"</li>
 </ul>  
