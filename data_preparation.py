@@ -22,7 +22,7 @@ df['externalOrig'] = ((df['oldbalanceOrig'] == 0) & (df['newbalanceOrig'] == 0))
 
 # Update the values in the 'newbalanceDest' column to 'oldbalanceDest +- amount'
 df['newbalanceDest'] = df['oldbalanceDest'] + df['amount']
-df['oldbalanceOrig'] = df['newbalanceOrig'] + df['amount']
+df['newbalanceOrig'] = df['oldbalanceOrig'] - df['amount']
 
 
 """ Feature Engineering """
