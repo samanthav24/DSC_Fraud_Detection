@@ -53,12 +53,14 @@ df['num_transOrig'] = num_transOrig
 # calculate the overall max of both the destination and origin account (excluding current transaction) and add noise
 noise = np.random.normal(0, std, num_transactions)
 df['maxDest'] = df.groupby('nameDest')['amount'].transform('max')
-df['maxDest'] = df.apply(exclude_current_maxDest, axis=1)
+df['maxDest'] = df.apply(lambda x: exclude_current_maxDest(x, df), axis=1)
+# df['maxDest'] = df.apply(exclude_current_maxDest, axis=1)
 df['maxDest'] += noise
 
 noise = np.random.normal(0, std, num_transactions)
 df['maxOrig'] = df.groupby('nameOrig')['amount'].transform('max')
-df['maxOrig'] = df.apply(exclude_current_maxOrig, axis=1)
+df['maxOrig'] = df.apply(lambda x: exclude_current_maxOrig(x, df), axis=1)
+# df['maxOrig'] = df.apply(exclude_current_maxOrig, axis=1)
 df['maxOrig'] += noise
 
 # sort the values according to timestep
@@ -142,7 +144,7 @@ test_df['isFraud'] = is_fraud_col
 is_fraud_col = val_df.pop('isFraud')
 val_df['isFraud'] = is_fraud_col
 
-# save the train and test set
+# save the train, validation and test set
 train_df.to_csv("train_df.csv",header=False, index=False)
 test_df.to_csv("test_df.csv",header=False, index=False)
 val_df.to_csv("al_df.csv",header=False, index=False)
