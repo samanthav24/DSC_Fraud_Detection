@@ -22,7 +22,7 @@ df['externalOrig'] = ((df['oldbalanceOrig'] == 0) & (df['newbalanceOrig'] == 0))
 
 # Update the values in the 'newbalanceDest' column to 'oldbalanceDest +- amount'
 df['newbalanceDest'] = df['oldbalanceDest'] + df['amount']
-df['newbalanceOrig'] = df['oldbalanceOrig'] - df['amount']
+df['oldbalanceOrig'] = df['newbalanceOrig'] + df['amount']
 
 
 """ Feature Engineering """
@@ -54,13 +54,11 @@ df['num_transOrig'] = num_transOrig
 noise = np.random.normal(0, std, num_transactions)
 df['maxDest'] = df.groupby('nameDest')['amount'].transform('max')
 df['maxDest'] = df.apply(lambda x: exclude_current_maxDest(x, df), axis=1)
-# df['maxDest'] = df.apply(exclude_current_maxDest, axis=1)
 df['maxDest'] += noise
 
 noise = np.random.normal(0, std, num_transactions)
 df['maxOrig'] = df.groupby('nameOrig')['amount'].transform('max')
 df['maxOrig'] = df.apply(lambda x: exclude_current_maxOrig(x, df), axis=1)
-# df['maxOrig'] = df.apply(exclude_current_maxOrig, axis=1)
 df['maxOrig'] += noise
 
 # sort the values according to timestep
