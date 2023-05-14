@@ -48,8 +48,8 @@ def main(args):
                                          x['x16'], x['x17'], x['x18'], x['x19'], x['x20'], 
                                          x['x21'], x['x22'], x['x23'], func=func), axis=1)
     df['sigmoid']=df.apply(lambda x: 1 / (1 + np.exp(-x['eq'])), axis=1)
-    df.loc[df['sigmoid'] < threshold, 'pred'] = 0
-    df.loc[df['sigmoid'] >= threshold, 'pred'] = 1
+    df.loc[df['sigmoid'] <= threshold, 'pred'] = 0
+    df.loc[df['sigmoid'] > threshold, 'pred'] = 1
 
     # calculate performance scores
     logloss = log_loss(df['y'], df['pred'])
