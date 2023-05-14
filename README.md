@@ -16,10 +16,10 @@ git clone https://github.com/brendenpetersen/deep-symbolic-optimization.git
 
 Follow the <a href="https://github.com/brendenpetersen/deep-symbolic-optimization"> corresponding install instructions</a>. You only have to install the Core package for the classification task.
 
-Move the adjusted files into the Deep Symbolic Optimization Repository:
+Copy the adjusted files into the Deep Symbolic Optimization Repository:
 ```
-mv regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/regression.py
-mv config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/config_classification_paysim.json
+cp regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/
+cp config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/
 ```
 
 
