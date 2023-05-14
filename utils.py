@@ -1,3 +1,8 @@
+""" This file contains functions that can be applied rows of a pandas dataframe """
+
+import pandas as pd
+
+
 def exclude_current_meanDest(row):
   """
   Function that calculates mean of dest account excluding the current transaction
@@ -28,7 +33,7 @@ def exclude_current_meanOrig(row):
   return ((mean*num_transactions) - amount) / (num_transactions - 1)
 
 
-def exclude_current_maxDest(row):
+def exclude_current_maxDest(row, df):
   """
   Function that calculates max of dest account excluding the current transaction
   """
@@ -44,7 +49,7 @@ def exclude_current_maxDest(row):
         return max_exclude_current
   return current_max
 
-def exclude_current_maxOrig(row):
+def exclude_current_maxOrig(row, df):
   """
   Function that calculates max of orig account excluding the current transaction
   """
