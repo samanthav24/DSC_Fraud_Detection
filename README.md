@@ -79,7 +79,7 @@ This will save a timestamped log directory in ```./code/deep-symbolic-optimizati
 To check how one of the generated equations performs on the train, validation or test set, you can run from the root directory: 
 
 ```
-python check_paysim.py --equation --threshold --dataset
+python evaluate_expression.py --equation --threshold --dataset
 ```
 
 You can enter the following values:
