@@ -143,6 +143,6 @@ is_fraud_col = val_df.pop('isFraud')
 val_df['isFraud'] = is_fraud_col
 
 # save the train, validation and test set
-train_df.to_csv("train_df.csv",header=False, index=False)
-test_df.to_csv("test_df.csv",header=False, index=False)
-val_df.to_csv("al_df.csv",header=False, index=False)
+train_df.to_csv("./code/deep-symbolic-optimization-master/dso/dso/task/regression/data/train_df.csv",header=False, index=False)
+test_df.to_csv("./code/deep-symbolic-optimization-master/dso/dso/task/regression/data/test_df.csv",header=False, index=False)
+val_df.to_csv("./code/deep-symbolic-optimization-master/dso/dso/task/regression/data/val_df.csv",header=False, index=False)
