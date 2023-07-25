@@ -5,6 +5,12 @@ Deep Symbolic Classification (DSC) for Fraud Detection is an adjusted framework 
 
 The framework utilizes deep reinforcement learning techniques to produce explainable mathematical equations that can be utilized to classify fraudulent transactions in an interpretable manner.
 
+## Prerequisites
+An installation of gcc is required, e.g. on ubuntu:
+```
+sudo apt install build-essential
+```
+
 ## Installation
 <hr>
 
@@ -18,8 +24,8 @@ Follow the <a href="https://github.com/brendenpetersen/deep-symbolic-optimizatio
 
 Copy the adjusted files into the Deep Symbolic Optimization Repository:
 ```
-cp regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/
-cp config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/
+cp code/regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/
+cp code/config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/
 ```
 
 
