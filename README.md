@@ -24,8 +24,10 @@ Follow the <a href="https://github.com/brendenpetersen/deep-symbolic-optimizatio
 
 Copy the adjusted files into the Deep Symbolic Optimization Repository:
 ```
-cp code/regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/
-cp code/config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/
+cd code
+cp regression.py ./deep-symbolic-optimization-master/dso/dso/task/regression/
+cp config_classification_paysim.json ./deep-symbolic-optimization-master/dso/dso/config/
+cd ..
 ```
 
 
