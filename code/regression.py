@@ -10,6 +10,8 @@ from dso.functions import create_tokens
 from dso.task.regression.dataset import BenchmarkDataset
 from sklearn.metrics import log_loss, f1_score
 
+from loguru import logger
+
 
 class RegressionTask(HierarchicalTask):
     """
@@ -81,8 +83,6 @@ class RegressionTask(HierarchicalTask):
 
         self.classification = classification
         self.sigmoid_threshold = sigmoid_threshold
-        print('classification = ', self.classification)
-        print('sigmoid_threshold = ', self.sigmoid_threshold)
 
         self.X_test = self.y_test = self.y_test_noiseless = None
 
@@ -173,13 +173,13 @@ class RegressionTask(HierarchicalTask):
         # Set stochastic flag
         self.stochastic = reward_noise > 0.0
 
-    def reward_function(self, p):
+    def reward_function(self, program, optimizing=False):
 
         # Compute estimated values
-        y_hat = p.execute(self.X_train)
+        y_hat = program.execute(self.X_train)
 
         # For invalid expressions, return invalid_reward
-        if p.invalid:
+        if program.invalid:
             return self.invalid_reward
 
         # Observation noise
@@ -187,7 +187,7 @@ class RegressionTask(HierarchicalTask):
         # ensure success cases aren't overlooked due to noise. If successful,
         # return max_reward.
         if self.reward_noise and self.reward_noise_type == "y_hat":
-            if p.evaluate.get("success"):
+            if program.evaluate.get("success"):
                 return self.max_reward
             y_hat += self.rng.normal(loc=0, scale=self.scale, size=y_hat.shape)
 
